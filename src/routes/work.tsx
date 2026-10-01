@@ -1,0 +1,14 @@
+import { createFileRoute } from "@tanstack/react-router";
+import caseBlueprint from "@/assets/case-growth-blueprint.jpg";
+import caseDashboard from "@/assets/case-dashboard.jpg";
+import caseEditorial from "@/assets/case-editorial.jpg";
+import { FinalCta, PageIntro, SectionLabel } from "@/components/site";
+
+export const Route = createFileRoute("/work")({ head: () => ({ meta: [
+  { title: "Our Work — Outlier Synapse" }, { name: "description", content: "A structured view of Outlier Synapse growth-system projects, with verified results added as available." },
+  { property: "og:title", content: "Our Work — Outlier Synapse" }, { property: "og:description", content: "Explore the problem, approach, solution, and verified results behind selected growth systems." },
+  { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
+] }), component: WorkPage });
+
+const work = [{image:caseBlueprint, aspect:"md:col-span-7", n:"01"},{image:caseDashboard, aspect:"md:col-span-5", n:"02"},{image:caseEditorial, aspect:"md:col-span-5", n:"03"},{image:caseBlueprint, aspect:"md:col-span-7", n:"04"}];
+function WorkPage(){return <><PageIntro index="01" eyebrow="Our Work" title="Growth systems, documented with rigor." description="Each case study will show the business problem, our approach, the delivered system, and results only after they are verified."/><section><div className="site-container py-16 lg:py-20"><SectionLabel>02 — Case Study Index</SectionLabel><div className="grid grid-cols-12 gap-6">{work.map((item,i)=><article key={i} className={`col-span-12 overflow-hidden rounded-md border border-border ${item.aspect}`}><img src={item.image} alt="Case study visual placeholder" width={1408} height={912} loading="lazy" className="aspect-[16/9] w-full object-cover"/><div className="grid gap-5 p-6 sm:grid-cols-[1fr_auto]"><div><span className="text-[10px] uppercase text-smoke">Case study placeholder · {item.n}</span><h2 className="mt-2 font-serif text-2xl">Project name to be confirmed</h2><p className="mt-2 text-sm text-muted-foreground">Client, industry, and engagement details — editable placeholders.</p></div><span className="text-xs text-ice">Results pending verification</span></div></article>)}</div></div></section><section className="border-y border-border bg-secondary"><div className="site-container py-16"><SectionLabel>03 — Case Study Structure</SectionLabel><div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{["Problem","Approach","Solution","Verified results"].map((x,i)=><div key={x}><span className="font-serif text-3xl text-ice">0{i+1}</span><h2 className="mt-4 font-serif text-xl">{x}</h2><p className="mt-2 text-sm text-muted-foreground">Detailed, evidence-based content will be added for each approved project.</p></div>)}</div></div></section><FinalCta/></>}
