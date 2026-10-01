@@ -57,7 +57,7 @@ function HomePage() {
           <h1 className="max-w-[16ch] font-serif text-5xl leading-[1.05] text-balance sm:text-6xl lg:text-7xl">Build a Predictable Customer Acquisition System</h1>
           <p className="mt-8 max-w-[48ch] text-base leading-relaxed text-muted-foreground sm:text-lg">AI-powered lead generation, marketing automation, and conversion-focused websites for growing businesses.</p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg"><Link to="/contact" search={{}}>Book Strategy Call <ArrowRight /></Link></Button>
+            <Button asChild size="lg"><Link to="/contact" search={{ channel: undefined }}>Book Strategy Call <ArrowRight /></Link></Button>
             <Button asChild size="lg" variant="outline"><Link to="/contact" search={{ channel: "whatsapp" }}>WhatsApp Consultation</Link></Button>
           </div>
           <div className="mt-12 grid max-w-md grid-cols-3 gap-4 border-t border-border pt-6">

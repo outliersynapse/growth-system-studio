@@ -42,7 +42,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <Button asChild variant="outline" size="sm" className="hidden md:inline-flex">
-          <Link to="/contact" search={{}}>Book a Strategy Call</Link>
+          <Link to="/contact" search={{ channel: undefined }}>Book a Strategy Call</Link>
         </Button>
         <Sheet>
           <SheetTrigger asChild>
@@ -62,7 +62,7 @@ export function SiteHeader() {
                 </SheetClose>
               ))}
               <SheetClose asChild>
-                <Button asChild className="mt-8 h-12"><Link to="/contact" search={{}}>Book a Strategy Call</Link></Button>
+                <Button asChild className="mt-8 h-12"><Link to="/contact" search={{ channel: undefined }}>Book a Strategy Call</Link></Button>
               </SheetClose>
             </nav>
           </SheetContent>
@@ -84,7 +84,7 @@ export function SiteFooter() {
         <div className="md:text-right">
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-muted-foreground md:justify-end">
             {navItems.slice(1).map((item) => <Link key={item.to} to={item.to} className="hover:text-foreground">{item.label}</Link>)}
-            <Link to="/contact" search={{}} className="hover:text-foreground">Contact</Link>
+            <Link to="/contact" search={{ channel: undefined }} className="hover:text-foreground">Contact</Link>
           </nav>
           <p className="mt-5 text-xs text-smoke">© 2026 Outlier Synapse</p>
         </div>
@@ -127,7 +127,7 @@ export function FinalCta() {
             <p className="mt-5 max-w-[48ch] text-muted-foreground">Let&apos;s discuss your business goals and design a growth system around them.</p>
           </div>
           <div className="col-span-12 lg:col-span-4">
-            <Button asChild size="lg" className="w-full"><Link to="/contact" search={{}}>Book a Strategy Call <ArrowRight /></Link></Button>
+            <Button asChild size="lg" className="w-full"><Link to="/contact" search={{ channel: undefined }}>Book a Strategy Call <ArrowRight /></Link></Button>
           </div>
         </div>
       </div>
