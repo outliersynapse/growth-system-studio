@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { PageIntro, SectionLabel } from "@/components/site";
 
-export const Route = createFileRoute("/contact")({ validateSearch: (search: Record<string, unknown>) => ({ channel: search.channel === "whatsapp" ? "whatsapp" : undefined }), head: () => ({ meta: [
+export const Route = createFileRoute("/contact")({ validateSearch: (search: Record<string, unknown>) => ({ channel: search["channel"] === "whatsapp" ? "whatsapp" : undefined }), head: () => ({ meta: [
   { title: "Contact — Outlier Synapse" }, { name: "description", content: "Book a strategy call with Outlier Synapse to discuss your acquisition, automation, website, or growth goals." },
   { property: "og:title", content: "Contact Outlier Synapse" }, { property: "og:description", content: "Start a conversation about building a predictable growth system for your business." },
   { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
