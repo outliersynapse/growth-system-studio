@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import logoAsset from "@/assets/outlier-synapse-logo.png.asset.json";
 import {
   Sheet,
   SheetClose,
@@ -22,16 +23,15 @@ const navItems = [
 
 export function Wordmark() {
   return (
-    <Link to="/" className="flex items-baseline gap-1.5" aria-label="Outlier Synapse home">
-      <span className="font-serif text-lg font-bold">Outlier</span>
-      <span className="font-serif text-lg italic text-ice">Synapse</span>
+    <Link to="/" className="block w-[148px] overflow-hidden rounded-sm bg-logo-surface transition-[filter,transform] duration-300 hover:brightness-110" aria-label="Outlier Synapse home">
+      <img src={logoAsset.url} alt="Outlier Synapse" width={730} height={280} className="block h-auto w-full" />
     </Link>
   );
 }
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
       <div className="site-container grid h-16 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 md:grid-cols-[auto_minmax(0,1fr)_auto]">
         <div className="min-w-0"><Wordmark /></div>
         <nav className="hidden items-center justify-center gap-7 text-[13px] text-muted-foreground md:flex" aria-label="Main navigation">
