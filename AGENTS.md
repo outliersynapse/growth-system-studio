@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep shared public-site navigation, footer, calls to action, and editorial primitives in `src/components/site.tsx` so all six routes remain visually consistent.
+- Keep the ambient network visualization in one fixed, pointer-transparent canvas at the root so motion stays lightweight and consistent across every public route.
