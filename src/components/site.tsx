@@ -23,7 +23,7 @@ const navItems = [
 
 export function Wordmark() {
   return (
-    <Link to="/" className="block w-[148px] overflow-hidden rounded-sm bg-logo-surface transition-[filter,transform] duration-300 hover:brightness-110" aria-label="Outlier Synapse home">
+    <Link to="/" className="block w-[148px] overflow-hidden rounded-sm bg-logo-surface transition-[filter,transform] duration-300 hover:brightness-105" aria-label="Outlier Synapse home">
       <img src={logoAsset.url} alt="Outlier Synapse" width={730} height={280} className="block h-auto w-full" />
     </Link>
   );
@@ -36,7 +36,7 @@ export function SiteHeader() {
         <div className="min-w-0"><Wordmark /></div>
         <nav className="hidden items-center justify-center gap-7 text-[13px] text-muted-foreground md:flex" aria-label="Main navigation">
           {navItems.map((item) => (
-            <Link key={item.to} to={item.to} activeProps={{ className: "text-foreground" }} className="transition-colors hover:text-foreground">
+            <Link key={item.to} to={item.to} activeProps={{ className: "text-primary" }} className="nav-link transition-colors hover:text-primary">
               {item.label}
             </Link>
           ))}
@@ -120,7 +120,7 @@ export function FinalCta() {
   return (
     <section>
       <div className="site-container py-16 lg:py-24">
-        <div className="grid grid-cols-12 items-center gap-8 rounded-md border border-border p-8 lg:p-14">
+        <div className="cta-panel grid grid-cols-12 items-center gap-8 rounded-md border border-border bg-card p-8 lg:p-14">
           <div className="col-span-12 lg:col-span-8">
             <p className="text-[11px] font-medium uppercase text-ice">Begin — Strategy Call</p>
             <h2 className="mt-4 max-w-[18ch] font-serif text-4xl leading-tight lg:text-5xl">Ready to Build a Predictable Growth System?</h2>

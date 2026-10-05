@@ -28,15 +28,15 @@ const services = [
 
 function SystemDiagram() {
   return (
-    <div className="flex min-h-[360px] flex-col rounded-md border border-border p-6">
+    <div className="system-diagram flex min-h-[360px] flex-col rounded-md border border-border bg-card p-6 shadow-sm">
       <div className="flex items-center justify-between text-[10px] uppercase text-smoke"><span>Fig. 01 · System Diagram</span><span className="text-ice">Active</span></div>
       <div className="my-auto grid grid-cols-3 gap-3">
         {["Acquire", "Nurture", "Convert"].map((item, index) => (
-          <div key={item} className="rounded-md border border-border py-5 text-center">
+          <div key={item} className="system-stage rounded-md border border-border py-5 text-center">
             <span className="text-[10px] uppercase text-smoke">0{index + 1}</span><p className="mt-2 font-serif text-lg">{item}</p>
           </div>
         ))}
-        <div className="col-span-3 rounded-md border border-dashed border-input px-4 py-8">
+        <div className="system-flow col-span-3 rounded-md border border-dashed border-input px-4 py-8">
           <div className="flex items-center justify-center gap-2" aria-hidden="true">
             <span className="size-3 rounded-full bg-ice"/><span className="h-px flex-1 bg-border"/><span className="size-3 rounded-full border border-foreground/40"/><span className="h-px flex-1 bg-border"/><span className="size-3 rounded-full bg-ice"/>
           </div>
