@@ -5,7 +5,7 @@ import caseBlueprint from "@/assets/case-growth-blueprint.jpg";
 import caseDashboard from "@/assets/case-dashboard.jpg";
 import caseEditorial from "@/assets/case-editorial.jpg";
 import { Button } from "@/components/ui/button";
-import { FinalCta, PortraitPlaceholder, SectionLabel } from "@/components/site";
+import { FinalCta, PortraitPlaceholder, SectionLabel, vineethPortrait } from "@/components/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -50,7 +50,7 @@ function SystemDiagram() {
 
 function HomePage() {
   return <>
-    <section className="border-b border-border">
+    <section className="hero-section border-b border-border">
       <div className="site-container grid grid-cols-12 gap-x-8 gap-y-12 py-16 lg:py-24">
         <div className="col-span-12 lg:col-span-7">
           <SectionLabel>01 — Acquisition Engine</SectionLabel>
@@ -60,7 +60,7 @@ function HomePage() {
             <Button asChild size="lg"><Link to="/contact" search={{ channel: undefined }}>Book Strategy Call <ArrowRight /></Link></Button>
             <Button asChild size="lg" variant="outline"><Link to="/contact" search={{ channel: "whatsapp" }}>WhatsApp Consultation</Link></Button>
           </div>
-          <div className="mt-12 grid max-w-md grid-cols-3 gap-4 border-t border-border pt-6">
+          <div className="hero-stat mt-12 grid max-w-md grid-cols-3 gap-4 border-t border-border pt-6">
             <div><div className="font-serif text-2xl">04</div><div className="mt-1 text-[10px] uppercase text-smoke">Services</div></div>
             <div><div className="font-serif text-2xl">04</div><div className="mt-1 text-[10px] uppercase text-smoke">Process steps</div></div>
             <div><div className="font-serif text-2xl text-ice">AI</div><div className="mt-1 text-[10px] uppercase text-smoke">Powered</div></div>
@@ -94,7 +94,7 @@ function HomePage() {
 
     <section className="border-b border-border">
       <div className="site-container py-16 lg:py-20"><SectionLabel>04 — Method</SectionLabel><h2 className="font-serif text-3xl sm:text-4xl">A Clear Path From Strategy to Growth</h2><div className="relative mt-12 grid gap-8 md:grid-cols-4 md:gap-6">
-        <div className="absolute left-0 right-0 top-6 hidden h-px bg-border md:block" />
+        <div className="process-track absolute left-0 right-0 top-6 hidden h-px bg-border md:block" />
         {["Strategy call and business analysis.","Design your growth system.","Launch campaigns and automation.","Optimize and scale."].map((step,i)=><div key={step} className="relative border-l border-border pl-5 md:border-l-0 md:pl-0"><div className="relative z-10 grid size-12 place-items-center rounded-full border border-border bg-background font-serif text-ice">0{i+1}</div><p className="mt-5 max-w-[20ch] text-sm leading-relaxed">{step}</p></div>)}
       </div></div>
     </section>
@@ -110,7 +110,7 @@ function HomePage() {
 
     <section className="border-b border-border">
       <div className="site-container grid grid-cols-12 gap-10 py-16 lg:py-20">
-        <div className="col-span-12 lg:col-span-5"><SectionLabel>06 — Founder</SectionLabel><div className="grid grid-cols-[8rem_minmax(0,1fr)] gap-5"><PortraitPlaceholder label="Vineeth portrait placeholder"/><div><h2 className="font-serif text-2xl">Vineeth</h2><p className="mt-1 text-[10px] uppercase text-smoke">Founder · biography placeholder</p><p className="mt-4 text-sm leading-relaxed text-muted-foreground">Founder biography will be added after the official profile is confirmed.</p><span className="mt-4 inline-block text-sm text-ice">LinkedIn — placeholder</span></div></div></div>
+        <div className="col-span-12 lg:col-span-5"><SectionLabel>06 — Founder</SectionLabel><div className="grid grid-cols-[8rem_minmax(0,1fr)] gap-5"><PortraitPlaceholder label="Vineeth Ganji, Founder of Outlier Synapse" image={vineethPortrait.url}/><div><h2 className="font-serif text-2xl">Vineeth Ganji</h2><p className="mt-1 text-[10px] uppercase text-smoke">Founder, Outlier Synapse</p><p className="mt-4 text-sm leading-relaxed text-muted-foreground">Founder biography will be added after the official profile is confirmed.</p><span className="mt-4 inline-block text-sm text-ice">LinkedIn — placeholder</span></div></div></div>
         <div className="col-span-12 lg:col-span-7 lg:border-l lg:border-border lg:pl-8"><div className="mb-6 flex items-baseline justify-between"><h2 className="font-serif text-2xl">The team</h2><Link to="/team" className="text-xs text-muted-foreground">Meet the team →</Link></div><div className="grid grid-cols-2 gap-4 sm:grid-cols-3">{[1,2,3].map(n=><div key={n}><PortraitPlaceholder/><p className="mt-2 text-sm">Name placeholder</p><p className="text-xs text-smoke">Official role</p></div>)}</div></div>
       </div>
     </section>

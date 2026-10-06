@@ -1,8 +1,10 @@
+import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/outlier-synapse-logo.png.asset.json";
+import vineethPortrait from "@/assets/vineeth-ganji-portrait.jpg.asset.json";
 import {
   Sheet,
   SheetClose,
@@ -30,8 +32,17 @@ export function Wordmark() {
 }
 
 export function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateScrolled = () => setScrolled(window.scrollY > 12);
+    updateScrolled();
+    window.addEventListener("scroll", updateScrolled, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrolled);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
+    <header data-scrolled={scrolled} className="site-header sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
       <div className="site-container grid h-16 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 md:grid-cols-[auto_minmax(0,1fr)_auto]">
         <div className="min-w-0"><Wordmark /></div>
         <nav className="hidden items-center justify-center gap-7 text-[13px] text-muted-foreground md:flex" aria-label="Main navigation">
@@ -135,12 +146,12 @@ export function FinalCta() {
   );
 }
 
-export function PortraitPlaceholder({ label = "Portrait placeholder" }: { label?: string }) {
+export function PortraitPlaceholder({ label = "Portrait placeholder", image }: { label?: string; image?: string }) {
   return (
     <div className="portrait-grid relative aspect-[4/5] overflow-hidden rounded-md border border-border bg-secondary" aria-label={label}>
-      <div className="absolute left-1/2 top-[30%] size-[24%] -translate-x-1/2 rounded-full border border-smoke/70 bg-background" />
-      <div className="absolute bottom-[12%] left-1/2 h-[38%] w-[55%] -translate-x-1/2 rounded-t-full border border-smoke/70 bg-background" />
-      <span className="absolute bottom-3 left-3 text-[10px] uppercase text-smoke">Editable portrait</span>
+      {image ? <img src={image} alt={label} className="size-full object-cover object-top" loading="lazy" /> : <span className="absolute inset-x-3 bottom-3 text-[10px] uppercase text-smoke">Portrait pending</span>}
     </div>
   );
 }
+
+export { vineethPortrait };
